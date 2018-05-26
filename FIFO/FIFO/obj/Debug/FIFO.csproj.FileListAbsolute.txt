@@ -1,0 +1,10 @@
+C:\Users\Hpnotebook\source\repos\FIFO\FIFO\bin\Debug\FIFO.exe.config
+C:\Users\Hpnotebook\source\repos\FIFO\FIFO\bin\Debug\FIFO.exe
+C:\Users\Hpnotebook\source\repos\FIFO\FIFO\bin\Debug\FIFO.pdb
+C:\Users\Hpnotebook\source\repos\FIFO\FIFO\obj\Debug\FIFO.csprojAssemblyReference.cache
+C:\Users\Hpnotebook\source\repos\FIFO\FIFO\obj\Debug\FIFO.Form1.resources
+C:\Users\Hpnotebook\source\repos\FIFO\FIFO\obj\Debug\FIFO.Properties.Resources.resources
+C:\Users\Hpnotebook\source\repos\FIFO\FIFO\obj\Debug\FIFO.csproj.GenerateResource.cache
+C:\Users\Hpnotebook\source\repos\FIFO\FIFO\obj\Debug\FIFO.csproj.CoreCompileInputs.cache
+C:\Users\Hpnotebook\source\repos\FIFO\FIFO\obj\Debug\FIFO.exe
+C:\Users\Hpnotebook\source\repos\FIFO\FIFO\obj\Debug\FIFO.pdb
