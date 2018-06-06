@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelEmpty = new System.Windows.Forms.Label();
+            this.labelUnTask = new System.Windows.Forms.Label();
+            this.labelCoTask = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -38,24 +40,45 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "B";
+            this.button1.Text = "Process";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // labelEmpty
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 13);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(299, 235);
-            this.textBox1.TabIndex = 1;
+            this.labelEmpty.AutoSize = true;
+            this.labelEmpty.Location = new System.Drawing.Point(13, 12);
+            this.labelEmpty.Name = "labelEmpty";
+            this.labelEmpty.Size = new System.Drawing.Size(69, 13);
+            this.labelEmpty.TabIndex = 1;
+            this.labelEmpty.Text = "Empty cicles:";
+            // 
+            // labelUnTask
+            // 
+            this.labelUnTask.AutoSize = true;
+            this.labelUnTask.Location = new System.Drawing.Point(13, 35);
+            this.labelUnTask.Name = "labelUnTask";
+            this.labelUnTask.Size = new System.Drawing.Size(101, 13);
+            this.labelUnTask.TabIndex = 2;
+            this.labelUnTask.Text = "Uncompleted tasks:";
+            // 
+            // labelCoTask
+            // 
+            this.labelCoTask.AutoSize = true;
+            this.labelCoTask.Location = new System.Drawing.Point(13, 61);
+            this.labelCoTask.Name = "labelCoTask";
+            this.labelCoTask.Size = new System.Drawing.Size(88, 13);
+            this.labelCoTask.TabIndex = 3;
+            this.labelCoTask.Text = "Completed tasks:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 260);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.labelCoTask);
+            this.Controls.Add(this.labelUnTask);
+            this.Controls.Add(this.labelEmpty);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -68,7 +91,9 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label labelEmpty;
+        private System.Windows.Forms.Label labelUnTask;
+        private System.Windows.Forms.Label labelCoTask;
     }
 }
 

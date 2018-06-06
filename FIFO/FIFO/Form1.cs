@@ -25,8 +25,10 @@ namespace FIFO
 
         private void button1_Click(object sender, EventArgs e)
         {
-            proc.cicling();
-            textBox1.Text=proc.listTasks();
+            proc.process();
+            labelEmpty.Text += proc.getEmptyCicles().ToString();
+            labelUnTask.Text += proc.getUncompletedTasks().ToString();
+            labelCoTask.Text += proc.getCompletedTasks().ToString();
         }
     }
 }

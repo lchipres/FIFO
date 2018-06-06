@@ -11,6 +11,10 @@ namespace FIFO
         public int _cicles;
         public Task next;
 
+        public Task(int _cicles)
+        {
+            this._cicles = _cicles;
+        }
         public override string ToString()
         {
             return "Task cicles: "+_cicles;

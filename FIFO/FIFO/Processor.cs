@@ -8,53 +8,97 @@ namespace FIFO
 {
     class Processor
     {
-        static private Random r,c;
-        int _emptyCicles,_completedTasks,_uncompletedTasks;
-        Task first, temporal;
+        static private Random r, c;
+        int _emptyCicles, _completedTasks, _uncompletedTasks;
+        Task first;
 
-        public void cicling()
+        public void process()
         {
-            for(int i = 0; i < 300; i++)
+            for (int i = 0; i < 300; i++)
             {
                 randomTask();
+                if (first != null)
+                {
+                    if (first._cicles > 0)
+                    {
+                        first._cicles--;
+                    }
+                    else
+                    {
+                        _completedTasks++;
+                        first = first.next;
+                    }
+                }
             }
+            uncompletedTasks();
         }
         private void randomTask()
         {
             r = new Random();
-            Task helper = first ;
+            Task helper = first;
             if (first == null)
             {
                 if (r.Next(1, 100) <= 36)
                 {
-                    first = temporal;
+                    first = new Task(c.Next(1, 15));
+                }
+                else
+                {
+                    _emptyCicles++;
                 }
             }//Is the first?
             else
             {
                 if (r.Next(1, 100) <= 36)
                 {
-
-                    while (helper.next != null)
-                    {
-                        helper = helper.next;
-                    }
-                    helper.next._cicles = c.Next(4, 14);
+                    helper.next._cicles = c.Next(4, 15);
+                    addBegin(helper.next);
+                    helper = helper.next;
+                }
+                else
+                {
+                    _emptyCicles++;
                 }
             }//Add to next
         }
-
-        public string listTasks()
+        public void addBegin(Task t)
         {
-            Task helper = first;
-            string s = "";
-            while (helper.next != null)
-            {
-                s += helper+Environment.NewLine;                  
-                helper = helper.next;
-            }
-            return s;
+            Task nw = new Task(c.Next(4, 15));
+            nw.next = first;//ir al primer producto
+            first = nw;//Lo coloca en el primero
         }
-        
+
+        public void uncompletedTasks()
+        {
+            if (first != null)
+            {
+                Task helper = first;
+                while (helper.next != null)
+                {
+                    _uncompletedTasks++;
+                    helper = helper.next;
+                }
+            }
+            else
+            {
+                _uncompletedTasks = 0;
+            }
+
+        }
+
+        public int getEmptyCicles()
+        {
+            return _emptyCicles;
+        }
+
+        public int getUncompletedTasks()
+        {
+            return _uncompletedTasks;
+        }
+
+        public int getCompletedTasks()
+        {
+            return _completedTasks;
+        }
     }
 }
